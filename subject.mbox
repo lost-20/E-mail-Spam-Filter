@@ -1,0 +1,94 @@
+From () 2020-12-05 15:48:24 +0000
+Received: from vla3-5f3559c911a9.qloud-c.yandex.net (vla3-5f3559c911a9.qloud-c.yandex.net [2a02:6b8:c15:2584:0:640:5f35:59c9])
+	by vla1-d577553c7248.qloud-c.yandex.net with LMTP id tpaibzGLA2-JUi7Dvjz
+	for <alek.epifanov2012@yandex.ru>; Sat, 05 Dec 2020 18:48:24 +0300
+Received: from mail-lj1-x232.google.com (mail-lj1-x232.google.com [2a00:1450:4864:20::232])
+	by vla3-5f3559c911a9.qloud-c.yandex.net (mxfront/Yandex) with ESMTPS id I27jTP072a-mN5O7TYN;
+	Sat, 05 Dec 2020 18:48:23 +0300
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	(Client certificate not present)
+Return-Path: alexander.epifanovr@gmail.com
+X-Yandex-TimeMark: 1607183303.908
+Authentication-Results: vla3-5f3559c911a9.qloud-c.yandex.net; spf=pass (vla3-5f3559c911a9.qloud-c.yandex.net: domain of gmail.com designates 2a00:1450:4864:20::232 as permitted sender, rule=[ip6:2a00:1450:4000::/36]) smtp.mail=alexander.epifanovr@gmail.com; dkim=pass header.i=@gmail.com
+X-Yandex-Suid-Status: 4 515988370
+X-Yandex-Spam: 4
+X-Yandex-Fwd: MTMyNTIzNjA0OTAzODg3ODc3NTcsMjI2MTE5MjU4NjYzMTQ1MzQ0MA==
+Received: by mail-lj1-x232.google.com with SMTP id o24so10095942ljj.6
+        for <alek.epifanov2012@yandex.ru>; Sat, 05 Dec 2020 07:48:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=date:from:to:message-id:in-reply-to:references:subject:mime-version;
+        bh=sqVd06FdjXVC/1Rrgfnx3H1M4SYjb+sjb6/p2BBpZSc=;
+        b=ZQZ5zrXKSYHJkTaVb4JWEugAOCmNjDIqtqvk1oUZI58gSmgKsbewQ/wevYbpIzwp/U
+         8H1MrjVm1DfK2gj0OT86RhdORlIbxMx1m3KPkTtpte8ZUUyiY71Q02j3LmqtesLXf44H
+         anryJSGTBDzbpJJi0IFaFZSffT3zdru4usXWAv1x5CsVxPGeDr1AACuqyTlpD4RdiKbc
+         G9nwVkNQAn4Al6ma4TjO1k5AhJJKdrYWWDG2GDidRpA606VzGVihFcZ+RlyO3Fp1AuUc
+         30mDpUgguZ5zZIvEVJ5dXWw4l9DxL/p6zX348YSnqWEDSF7RLYT6E9P214HxyoG6Lls0
+         1ypA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:date:from:to:message-id:in-reply-to:references
+         :subject:mime-version;
+        bh=sqVd06FdjXVC/1Rrgfnx3H1M4SYjb+sjb6/p2BBpZSc=;
+        b=f7VIvDHW+KILTiZ7Etzej2WN8SMkWCIHNr/Y04eR8INWVYQXnBwIhc9/ckbcSTAz57
+         q/+4nb0/XqgWn6uyJ5c8FmMvKpo1rM2jhzpW+CT0cptXx1aQL4jFglsaKyoYZAWAotBh
+         5HaN1RIru2yOIwDrJss87X32RRSfy68oNjsHO/D7nwxv+olNIGpRasjqaXwPo0YcEGZw
+         4Mlt9HSyo5CIIuTmY8ag5EEVloe9h3Lz8JpBLB9Z73IryZsSRovi42zqJDoUQxzVLqQ4
+         B8eZ7davDfhEf1iQBHao8VcAaROkX0zDuSkUasPDHMrLmHMl6NMm07K/mFS72gwj2OhH
+         Egtw==
+X-Gm-Message-State: AOAM533kU6oNTgBzyRpwSqhDag9ppg2Qk82cap7JRPkgONKA/YMtYVnu
+	CzVsf1ygnvz2A6xMFPyHi7SGpXz+ktM=
+X-Google-Smtp-Source: ABdhPJx+XN+CwmI/16KEOJpAyrAAlkiA0BkaKlU6kJAdxQ4zDta/1uambZYIgV86dwh7k46LppbjYg==
+X-Received: by 2002:a2e:94cc:: with SMTP id r12mr5586796ljh.64.1607183303373;
+        Sat, 05 Dec 2020 07:48:23 -0800 (PST)
+Received: from [192.168.1.42] ([95.104.134.167])
+        by smtp.gmail.com with ESMTPSA id e20sm45723ljn.8.2020.12.05.07.48.22
+        for <alek.epifanov2012@yandex.ru>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 05 Dec 2020 07:48:22 -0800 (PST)
+Date: Sat, 5 Dec 2020 19:48:16 +0400
+From: =?utf-8?Q?=D0=90=D0=BB=D0=B5=D0=BA=D1=81=D0=B0=D0=BD=D0=B4=D1=80_=D0=95=D0=BF=D0=B8=D1=84=D0=B0=D0=BD=D0=BE=D0=B2?=
+ <alexander.epifanovr@gmail.com>
+To: alek.epifanov2012@yandex.ru
+Message-ID: <f9a6aef3-d2fe-40c7-ba36-600001393a8f@Spark>
+In-Reply-To: <1d35b30a-48ab-415b-8ddf-7b9530545af6@Spark>
+References: <1d35b30a-48ab-415b-8ddf-7b9530545af6@Spark>
+Subject: =?utf-8?Q?=D0=92=D1=8B_=D0=B2=D1=8B=D0=B8=D0=B3=D1=80=D0=B0=D0=BB=D0=B8_=D0=BF=D1=80=D0=B8=D0=B7.?=
+X-Readdle-Message-ID: f9a6aef3-d2fe-40c7-ba36-600001393a8f@Spark
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="5fcbabc5_1f16e9e8_418"
+X-Yandex-Forward: 6bd920f79188d794ca3610796c3e3a12
+
+--5fcbabc5_1f16e9e8_418
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+=D0=9F=D1=80=D0=B8=D0=B2=D0=B5=D1=82, =D0=BC=D0=B5=D0=BD=D1=8F =D0=B7=D0=BE=
+=D0=B2=D1=83=D1=82 =D0=90=D0=BB=D0=B5=D0=BA=D1=81=D0=B0=D0=BD=D0=B4=D1=80=
+. =D0=92=D1=8B =D0=B2=D1=8B=D0=B8=D0=B3=D1=80=D0=B0=D0=BB=D0=B8 =D0=BF=D1=
+=80=D0=B8=D0=B7.
+
+--5fcbabc5_1f16e9e8_418
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+<html xmlns=3D=22http://www.w3.org/1999/xhtml=22>
+<head>
+<title></title>
+</head>
+<body>
+<div name=3D=22messageBodySection=22>
+<div dir=3D=22auto=22>=D0=9F=D1=80=D0=B8=D0=B2=D0=B5=D1=82, =D0=BC=D0=B5=D0=
+=BD=D1=8F =D0=B7=D0=BE=D0=B2=D1=83=D1=82 =D0=90=D0=BB=D0=B5=D0=BA=D1=81=D0=
+=B0=D0=BD=D0=B4=D1=80. =D0=92=D1=8B =D0=B2=D1=8B=D0=B8=D0=B3=D1=80=D0=B0=D0=
+=BB=D0=B8 =D0=BF=D1=80=D0=B8=D0=B7.</div>
+</div>
+</body>
+</html>
+
+--5fcbabc5_1f16e9e8_418--
+
+
+

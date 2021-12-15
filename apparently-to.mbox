@@ -1,0 +1,104 @@
+Received: from 10.217.150.13
+ by atlas121.free.mail.ne1.yahoo.com with HTTP; Sat, 5 Dec 2020 18:06:52 +0000
+Return-Path: <alex.epifanov@yahoo.com>
+Received: from 77.238.176.244 (EHLO sonic311-1.consmr.mail.ir2.yahoo.com)
+ by 10.217.150.13 with SMTPs; Sat, 5 Dec 2020 18:06:52 +0000
+X-Originating-Ip: [77.238.176.244]
+Received-SPF: pass (domain of yahoo.com designates 77.238.176.244 as permitted sender)
+Authentication-Results: atlas121.free.mail.ne1.yahoo.com;
+ dkim=pass header.i=@yahoo.com header.s=s2048;
+ spf=pass smtp.mailfrom=yahoo.com;
+ dmarc=success(p=REJECT) header.from=yahoo.com;
+X-Apparently-To: alex.epifanov@yahoo.com; Sat, 5 Dec 2020 18:06:52 +0000
+X-YMailISG: 0xeph.YWLDuIHz0jxABIwgA8g2j25mEnhC5cU42SfEVSMeUF
+ pVXwzllxx3EuANlblV01TgDAW3g5EGcgee2EJWlQrxJe7gGmhOBeoVKZrneh
+ RnZvDELSrZHSD_LixspOtGF0L83xW9sgHydhdxtcJhU99prlOHNrdcnPqEsN
+ lhxxXXn0G2KJtEPQPCZdjIaTbXw0Gn4.iYRDfSEf4CNxYLjqQQHRNJdCBAfo
+ KGcGmYdKWdtho70sLyi08BysHOMyLn762i2h6093i._I6QAfXWFfyJZa_s02
+ vM5eQbf4ut9t5VeGlT54h6SqPhHvsWhQ0ihFL371TNIlSMBRbAabwPHOafmm
+ n8r8m0mdcx1DFhTD5pMEZyTnlxRFnhOMC4T_yEW8vjFX6HQOaoZPsZusGl35
+ 3imYL4NIdTRUl5QgvCcZs4q6nCAyQkpbpL6K6saXiwsQ00_MosYbyLskyUHy
+ m0DD99KtcZdVnW7pcwDoEGUITHjGQSGiNFD8u1ODpPbFHNF46DWCtm9bZWfG
+ V5z0yoAvTDNXmGZ24BbVqzxzi78dyz6eOFYFo64QFory.Xf.wgCIuZhCkELt
+ 14mKcDnTFtKdOsCrVq6.kLAgec7pBda.NwIc_oLOLnK_E9cJmjYHwU46XNAo
+ vrmMQrz9.MQ10SnkAup7T02a05whaPS7AK.Uc6a6j_Dv7DSQt8sf6Opc4HLd
+ nfb.HLwYYooDeZiTep_o7j.LAp7ENhLZBZ5ettccSRyTwnUvsmvQ7tCMb8pe
+ PRbOGnPjVdqPYpCY0U90jSm1h9lIIfTY2AjQSw5UvptKG5B95HsCHKz0z7Dp
+ Bzgdn50Aq1KTgKIxSrK.1GpP_5b.vGV6av3hlDax2XuIfXx3DVfAINIZoVHd
+ xA22hpDNvGGvem4bfHDZ0yY.K7918_ltZf4gKliOgdRMlPDUl9d657cGeFRT
+ Ri6NxE2oNdkKHP1..1Esf0mb7reA0vkPFv0GAuXC51TG6tuNaXbA4MeNhcFH
+ x6qqTKLWkDnSDvt3yK9fo91eSO9.Ep2yWAk_2Gy.x.U0yHyg2UWdaDUD2hKM
+ AfrTqr4r.FKhkDTugne6J2Y_
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1607191611; bh=2n6HU8VZlsVN3i79Uki5siBDFDlsFXASvsQJvxQ833s=; h=Date:From:To:Subject:References:From:Subject; b=PkJWX8aYmPTthtJEEfoKUoqY40WsktuL/M19jCtgr84R7aZ3WnU7cW39phJqyQtUwmWmzvaIhBPVQXGQW1nIYxfKUAMidST+k8yqnTgyO+kap7gTyNNUhPe1JWq41ZvlZs3aj9T/J+oidM4K/vLeb6G4VNp7tPhLW32SAyepkiEVg/FvhtUfByV0OlujyeoHv14OUmyDAC+79EgdcQ056brlXezRV5k60TZQaxvBpFF0IFDKzBYOkmsrCU84i8B7CXXGz5SI8slo0ucmjffDd2NkYW10vi47MtNpR74UoQVrC8asdsk4lYXz/ozJn13ngQ6JqLw8kpc3D3oVwSW0hg==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1607191611; bh=OineiQZRovzb1hNA84JBl9p0setzOB6m9TRQpXja1hr=; h=Date:From:To:Subject:From:Subject; b=DsA33kTQ0XMyjxaAU8jeM/IDd6ISCZtLmqWRp1mubC4lGS808nNHANCz48VlYoRwICEBWYHXpHHrbttf+BMBKud5XN/TeORr9ylgX9sje1apWpYN15V7BTNLVQZLZXIT1S9pB+3CdHPr1ts9XQq1TIfr7qi/RNa9fTMqRdIUisr0/i8HkG88uURATWUkupRewKkHsImCQRbkNVkMfmcNH+gFroExsMtAV9+6venw9LoHZGs15WuYoBx/yY/4O126OOdDgDaaXmSvzoDLg7Ft9DZyiHBX2XwrVGZtC0ppDGVF/1KJx/rhpw1jdr6KrMyc2vVtgtMrR5ixeY+cr4bulw==
+X-YMail-OSG: KgwhA84VM1nuR8q_wnDIx6i1SKX7NVuFMCTfrY0fWrUJUjo88TMoWLTXhcUANtM
+ H_T3IBJyT58mB.mbnAD0iwPfforNKd6qiykUJjOgRhmGtfVNi52ivdE2GeIg6RSC4k7J6Mp1qFOH
+ xjSh6BcGs.cIyOfNDo5iGfMIu4wgjxOhOe40NAyfGcwclA4OXyB68iVMoDeOGqDpXKDdqmpscL73
+ zVJgklxAiqaHo0pk_UuauQBAiwAibCExW96xT91VrniM44Pj._1Z7PPSM0SMAjVltwdr4z_fCFUn
+ VtnoUISKksFCkPujxXDPzrEZZU_lt8Hy.wSeg3KsVouQh8T4uhjuXJ_Z7IXMZfcrYePDvTuxjbJY
+ Iu1MA0GSC.FmiyneDMo1xQBKvTTFk0NkyKmT0VFO6Qs3Qt8e.tOa.oLLPTmTJFBkMIibNG89z1ED
+ g5c0ph5pqmh_R4CLT6JAS216D9COcXTaaTr5J86fv8bLIIJM48u0QsN.pVQIMGmFR5GQFfArQpgV
+ UvS5FRUhLfYZNuZAri6jPlCIxkCSafdoTkIHcrYq95uXjW.eFKpYB6zk7x_nGzmhVqKGgw0ORqFh
+ 118dvZkf1TQlf.oWRt6Wvfv3L6wxz4QpqDLxqT77.M6ou5IyVD_6pycEqX6H83uOFRRFsPuFzz7X
+ An9LkvoPPnscuOSI6a3VFaDuML9Tk7TkJk.e4qQHb64En76EfYskHIJ1F8SGLftO7GuMzNsOdv2I
+ _j6bLjBmA7W0.JP1dzZLHTZE.vbBT23Mq58.y3pwhKn9Sl8OQywlbyN5wDgYA3kTq9T7NZpHe0VE
+ TtdO4P76QNvDOtgOEQFd6LOXnGS3_MDNnpUe74SOHSmptmTU3MoOlt4_J3dYWGFpib74jYtFluO8
+ fbIKZCbxfKZncbe690KRBHKaQAOV9udC555JhAdVJz7JI3EnUQWhAfxGkCqnDpTToWGlL3oBZcTv
+ DOHbsQwg9CYOWVFAN3Gqzh7DO94wPwXnjZ90zZxJQ4U03OxdMzJ7DmSix2N3xrZn6wEDgyuGPjAs
+ FOVlti_NUl9l4MsAyhYkmLMf.0kMJ88FO2OqIXwGa9X6he0mMngXyqsTcE3QqFixCfMPjO4EJEJ_
+ HubCLCjKNb0q.XDPGJidNd0IMjpeCrivWCwM.HvNcxrm8Pt9W.288CTlYRKhiRO4H01_jskjVncz
+ mjVL90FJ5nmaoZ5SdcW8ENYZfx2uqOQxwKfMM5CVe95KlRnIy2KqTM8Z74XqnLCXlli7h8Kprt2L
+ jJMsfY4vApl.8BemfsJ9dU5x2SSCvm5dEISdMeFjOnawI5liWYdRl4QtUvgAjQnTfgks_to9NDaM
+ x56IiECOV7pyrtntOHgtJX8d1A.CmVcDrEVvtgkivQwL3mNl72Dz2w_LJAssYKYaZ5TIiuFFhmHT
+ gqpWx5qqydxtnV29KFE0EA8EKFanH.2YKBvXBYOywHWpO56.AtbC7bE6HHP42QMKO3jDqQn_h3d3
+ yuTWM1Mds9Eg1mqyNqae5wJ6BAXNVhqXTnf_JbIRHzYPmrclzb5BLDFGyLnipVhehtOFWK89whpV
+ nFa4l6nD5K3AUQyzfh5_Lh7MJDg2DHBBggKVUkJ_36mLGK5F3kq3Tsg7MqiLiCWaBw6GfwFQ0Em_
+ Dh2HLCJV.JiTIyLG9HP4_5NZhfm7gxl7jYUoVDLF7N5FlnrcgvF0rfLeBJcoXtQkXEP50NLbEi3t
+ vQETOU4_mgCOtes10sJxTmGEOe8PuzS.rEl1gXHSnkkw_eMjsgx4JiBy.oHuR3cKYAJFZDKGYhq6
+ b.NKptts_sU6y3P2dq2Kmu_vd_5mjo0SHMtYuwp41TQ_zA3.60j7lz6s2emyerCmTu4OtV54C_KN
+ YpAlOdmzfIZOScRvWb.XaFC6Wk1nQA9meDzf3YfnZZM5hKWnM7mfXUPfdFqiNqUa.YdV4RSI4iZS
+ 4FkHk2AVtVSYVy4spYCsk10g4IZJq.6ZWQvY6q4AsyCqMtgcNna.JgOtr.f4ETMDhKhCNspxeTCe
+ mNu.oS0Md.._x4G8kQT61.AD_6vukZYiWzMO1_4pBAyjuirw4MQdTG7DAmSGx5ddU8oDfficGU35
+ qDvzvYhE1SuK0O1F9oxOHlHv3XbB2_2fdaUVBku08HFSWphPy7XR4SH4WbrQn7KE7fhT3O37H6xy
+ ospbVRKfdDIG0hu.4JLYoyDCT_qEFmUc30I3Q7zi1gEtQdMZa4rfFh2Jf9ZwM6kKgITc1wDFEz1O
+ OZ_rYpjZJIHO4724U1DLZmhJJhv7swjJKKiXKo1f3MIC7Soy2SOlYie.njhYodd2r9FiOw8LdqdW
+ VJVOrhOLV26lAATaPyNmkiXrobrEnBVVDM.Zqro6i0ibyaxwhpcU.3ZTHxi5v6X1Snwiz0GoLhGG
+ 4FAngyXVPHix0m4WlmnQA5tt013LVPKc_3wYNvjjGQ6y0eEu95T2AEhkD3EKMfU_PGZP11eNdPdA
+ aUYkqvCI00H6Qdk6_AfhcdErMZmMvc.kco1Jpk8X_DCmbvws4Kx.LdQsb1gA8RWRWqqIY.bELYKz
+ 4ywwrLLrgnUfb4BUVLRIYcNgk.yEWYCwETOsCvyW.oAMcfKoENwmSW3HndqibdeVaa2nopcAVyCv
+ gDVvqR417ml85howEylXqrLeVCsHimetdVMjvp.LOwuXT7Zdu3XiM2MZRG2kNWH0mSU1bdlPswCQ
+ KaPqk.Udvb..4xbPij15wGRHYAxWWDoIrj9bVY_.HA2Ox
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic311.consmr.mail.ir2.yahoo.com with HTTP; Sat, 5 Dec 2020 18:06:51 +0000
+Date: Sat, 5 Dec 2020 18:04:50 +0000 (UTC)
+From: 
+  =?UTF-8?B?0JDQu9C10LrRgdCw0L3QtNGAINCV0L/QuNGE0LDQvdC+0LI=?= <alex.epifanov@yahoo.com>
+To: 
+  =?UTF-8?B?0JDQu9C10LrRgdCw0L3QtNGAINCV0L/QuNGE0LDQvdC+0LI=?= <alex.epifanov@yahoo.com>, 
+  "alexander.epifanovR@gmail.com" <alexander.epifanovR@gmail.com>, 
+  "alek.epifanov2012@yandex.ru" <alek.epifanov2012@yandex.ru>, 
+  "epifanov04@bk.ru" <epifanov04@bk.ru>, 
+  "vladya.epifanov@yandex.ru" <vladya.epifanov@yandex.ru>, 
+  "tihonkudinov@gmail.com" <tihonkudinov@gmail.com>
+Message-ID: <1506935407.9203889.1607191490093@mail.yahoo.com>
+Subject: =?utf-8?B?0J/QvtGB0LvQtdC00L3Rj9GPINC/0YDQvtCy0LXRgNC60LAu?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+  boundary="----=_Part_9203888_1210808603.1607191490092"
+References: <1506935407.9203889.1607191490093.ref@mail.yahoo.com>
+X-Mailer: WebService/1.1.17111 YMailNorrin Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Safari/605.1.15
+Content-Length: 628
+
+------=_Part_9203888_1210808603.1607191490092
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: base64
+
+0J3QviDRjdGC0L4g0L3QtSDRgtC+0YfQvdC+Lg==
+------=_Part_9203888_1210808603.1607191490092
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head></head><body><div class=3D"yahoo-style-wrap" style=3D"font-fami=
+ly:Helvetica Neue, Helvetica, Arial, sans-serif;font-size:16px;"><div dir=
+=3D"ltr" data-setdir=3D"false">=D0=9D=D0=BE =D1=8D=D1=82=D0=BE =D0=BD=D0=B5=
+ =D1=82=D0=BE=D1=87=D0=BD=D0=BE.</div></div></body></html>
+------=_Part_9203888_1210808603.1607191490092--
